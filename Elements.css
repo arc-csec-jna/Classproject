@@ -1,0 +1,170 @@
+
+*{
+    box-sizing: border-box;
+}
+
+header{
+    min-height: 40vh;
+    background: url("KIDS CODING CLASSROOM.png") no-repeat center center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1em 2em;
+    position: relative;
+}
+
+.nav-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    /* to add animation to each nav words */
+    transition: all 0.3s ease 0s;
+    
+
+}
+/* When hover each nav word, change word color to navy */
+nav a:hover{
+    color: navy;
+}
+
+
+
+/* Responsive elements adjustment for other devices (e.g. smartphone or tablet) */
+@media (max-width: 600px){
+    header{
+        min-height: 30vh;   
+        padding: 2em 1em;
+        background-image: url("KIDS CODING CLASSROOM.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .nav-container{
+        justify-content: right;
+        font-size: x-small;
+        padding-top: 100px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .features{
+        flex-direction: column;
+        align-items: center;
+    }
+    .features-box{
+        width: 90%
+    }
+
+
+
+}
+
+
+footer {
+    background: url("KIDS CODING CLASSROOM_footer.png") no-repeat center center;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+footer small {
+    display: block;
+    margin-top: 1em;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:  #0cc0df;
+}
+
+
+/* From here Resources tab  */
+/* All main contents for Resources tab */
+.learning-box{
+    text-align: center;
+    
+}
+
+/* To maintain 4 box contents positions */
+#res-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Each box setting */
+.rbox{
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    border-radius: 25px;
+    border: 3px solid lightgreen;
+    padding: 20px 30px ;
+    /* To add initial state before animation */
+    background-color: white;
+    box-shadow: inset 0 0 0 0 #0cc0df;
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
+}
+/* Goal state after animation */
+.rbox:hover{
+    box-shadow: inset 0 0 350px 0 navy;
+    border: 3px solid navy;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.box-link{
+    width: 120px;
+    padding: 5px 10px ;
+    border-radius: 50px;
+    border: 2px solid #0cc0df;
+    color: white;
+    /* This is initial state before animation */
+    background-color:#0cc0df;
+    box-shadow: inset 0 0 0 0 lightyellow;
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
+    
+}
+/* Goal state after animation */
+.box-link:hover{
+    box-shadow: inset 120px 0 0 0 limegreen;
+    border: 2px solid limegreen;
+    cursor: pointer;
+    color: white;
+    
+}
