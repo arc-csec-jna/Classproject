@@ -217,7 +217,7 @@ nav a.active {
 }
 
 .rbox:hover {
-  box-shadow: inset 0 0 350px 0 navy;
+  box-shadow: inset 0 0 250px 0 navy;
   border: 3px solid navy;
   cursor: pointer;
   color: white;
@@ -461,6 +461,7 @@ footer small {
   }
 
 }
+
 
 
 
