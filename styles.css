@@ -56,6 +56,7 @@ header > * {
   margin: 0;
   font-size: 2.2rem;
   font-weight: 900;
+   color: white;
 }
 
 .title-text p {
@@ -455,4 +456,5 @@ footer small {
     flex-direction: column;
     gap: 10px;
   }
+
 }
