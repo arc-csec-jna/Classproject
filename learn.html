@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn to Code – Kids Code Library</title>
+<style>
+  :root {
+    --brand: #0cc0df;
+    --bg: #f7fbff;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --line: #e6ecf1;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  header {
+    text-align: center;
+    padding: 26px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    background: var(--brand);
+    padding: 10px 0;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  nav a.active,
+  nav a:hover {
+    background: white;
+    color: var(--brand);
+  }
+
+  .card-row {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    padding: 0 1em;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h3 {
+    margin: 0.5em 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--ink);
+  }
+
+  .card p {
+    margin: 0.5em 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .card .emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+
+  .card .cta {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: var(--brand);
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .card .cta:hover {
+    background-color: #0077b6;
+  }
+
+  .strip {
+    margin-top: 3em;
+    padding: 1.5em;
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .trafficBox {
+    width: 180px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 3px solid #222;
+    background: #111;
+    margin: 20px auto;
+  }
+
+  .light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 8px auto;
+    background: #3a3a3a;
+    border: 3px solid #000;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .panel {
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fafcff;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+
+  footer {
+    margin-top: 28px;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: #94a3b8;
+    padding: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .card-row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 90%;
+      margin-bottom: 1em;
+    }
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resources</title>
+</head>
+<!-- Header Information -->
+<header>
+    <div class="nav-container">    
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Learn to Code</a>
+                </li>
+                <li>
+                    <a href="gamified.html">Gamified</a>
+                </li>
+                <li>
+                    <a href="Library_resources.html" class="res-nav">Resources</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+    
+</header>
+
+<div class="wrap">
+
+  <!-- Row: Conditionals + Variables -->
+  <section class="card-row">
+  <article class="card">
+    <div class="emoji">✖️</div>
+    <h3>Conditionals</h3>
+    <p>Learn how computers make decisions! Explore if–else through fun scenarios and interactive challenges.</p>
+    <a class="cta" href="traffic.html">Start</a>
+  </article>
+
+  <article class="card">
+    <div class="emoji">⬛</div>
+    <h3>Variables</h3>
+    <p>Discover how to store and use information! Create your own data values and watch them change dynamically.</p>
+    <a class="cta" href="variable.html">Start</a>
+  </article>
+
+  <article class="card">
+    <div class="emoji">🔁</div>
+    <h3>Loops (Alpha)</h3>
+    <p>Master the power of repetition! Learn how computers repeat tasks efficiently and create amazing patterns.</p>
+    <a class="cta" href="loop.html">Start</a>
+  </article>
+</section>
+
+  <!-- Try it out -->
+  <section class="strip">
+    <h4>Try It Out: Build Your First Conditional! <span class="muted">demo code run</span></h4>
+    <p class="muted">Click the blocks below to create a simple if–then statement.</p>
+
+    <div class="trafficBox">
+      <div id="redMini" class="light"></div>
+      <div id="yellowMini" class="light"></div>
+      <div id="greenMini" class="light"></div>
+    </div>
+
+    <div style="text-align:center">
+      <button class="btn" onclick="miniLight('red')">if</button>
+      <button class="btn" onclick="miniLight('yellow')">age ≥ 10</button>
+      <button class="btn" onclick="miniLight('green')">show message “You can code!”</button>
+    </div>
+
+    <div id="miniMsg" class="panel" style="margin-top:10px">Click the blocks in order to see the magic happen!</div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  © Kids Code Library — Empower young minds through code
+</footer>
+
+<script>
+  function miniLight(c){
+    const R=document.getElementById('redMini'),
+          Y=document.getElementById('yellowMini'),
+          G=document.getElementById('greenMini'),
+          M=document.getElementById('miniMsg');
+    [R,Y,G].forEach(x=>x.style.background='#3a3a3a');
+    if(c==='red'){R.style.background='red';M.textContent='IF rule triggered: checking age…';}
+    else if(c==='yellow'){Y.style.background='yellow';M.textContent='Condition met (age ≥ 10)';}
+    else{G.style.background='green';M.textContent='Action: “You can code!” ✅';}
+  }
+</script>
+</body>
+</html>
