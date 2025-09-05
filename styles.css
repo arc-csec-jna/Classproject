@@ -66,12 +66,12 @@ header > * {
 
 /* === Navigation === */
 .nav-container {
+background-color: white;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 15px; /* Match global layout */
+  padding-top: 15px; /* Match global layout AJG */
     padding-bottom: 15px;
-
 }
 nav ul {
   display: flex;
@@ -456,11 +456,11 @@ footer small {
     justify-content: center;
   }
   .nav-container {
+	background-color: white;
     justify-content: center;
     font-size: x-small;
-    padding-top: 15px; /* Match global layout */
-	  padding-bottom: 15px;
-
+    padding-top: 15px; /* Match global layout AJG */
+	padding-bottom: 15px;
   }
 
   nav ul {
@@ -614,3 +614,4 @@ footer small {
   background-color: #0077b6;
 }
 }
+
