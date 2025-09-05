@@ -189,10 +189,8 @@ nav a.active {
 /* === Resources Tab === */
 .learning-box {
   text-align: center;
-  color: white;
+   color: white;
   margin: 0;
-  font-size: 2.2rem;
-  font-weight: 900;
 }
 
 #res-box-container {
@@ -463,6 +461,7 @@ footer small {
   }
 
 }
+
 
 
 
