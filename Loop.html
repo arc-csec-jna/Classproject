@@ -1,0 +1,89 @@
+<section>
+  <h2>Loops</h2>
+  <p>A loop repeats actions. Enter a limit number to see all even numbers up to that value.</p>
+
+  <!-- Controls -->
+  <input type="number" id="limit" min="1" placeholder="Enter a number (e.g., 20)" style="padding:8px; border-radius:8px; border:1px solid #ccc;">
+  <button onclick="showEvens()" style="padding:8px 12px; border-radius:8px; border:1px solid #0cc0df; background:#eafaff; cursor:pointer;">Show Even Numbers</button>
+  <button onclick="clearEvens()" style="padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer;">Clear</button>
+
+  <!-- Hint / Count -->
+  <p id="loopHint" style="color:#64748b; margin:10px 0;">Tip: Try 10, 20, or 30.</p>
+  <p id="evenCount" style="font-weight:bold; margin:6px 0; display:none;"></p>
+
+  <!-- Output area -->
+  <div id="evenGrid" aria-live="polite" style="display:flex; flex-wrap:wrap; gap:8px; padding:10px; border:1px solid #e6ecf1; border-radius:12px; background:#f7fbff; min-height:56px;"></div>
+
+  <style>
+    .bubble {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:44px; height:44px;
+      border-radius:50%;
+      font-weight:700;
+      color:#0f172a;
+      background:#c7f1ff;           /* default cyan bubble */
+      border:2px solid #0cc0df;
+      animation: pop .22s ease-out;
+      user-select:none;
+    }
+    /* subtle variety so it looks fun */
+    .bubble:nth-child(3n)  { background:#ffe8a3; border-color:#ffcd39; }
+    .bubble:nth-child(4n)  { background:#d7ffc9; border-color:#4ade80; }
+    .bubble:nth-child(5n)  { background:#f3e8ff; border-color:#c084fc; }
+
+    /* special flair every 10th even number */
+    .bubble.flair::after { content:"🎉"; margin-left:4px; font-size:14px; }
+
+    @keyframes pop {
+      0%   { transform:scale(.6); opacity:.0; }
+      100% { transform:scale(1);  opacity:1; }
+    }
+    /* small helper for validation message */
+    .warn { color:#b91c1c; font-weight:600; }
+  </style>
+
+  <script>
+    function showEvens(){
+      const box   = document.getElementById('evenGrid');
+      const hint  = document.getElementById('loopHint');
+      const count = document.getElementById('evenCount');
+      const limitVal = parseInt(document.getElementById('limit').value, 10);
+
+      // reset
+      box.innerHTML = "";
+      count.style.display = "none";
+      hint.classList.remove('warn');
+
+      if (isNaN(limitVal) || limitVal < 2){
+        hint.textContent = "Please enter a number 2 or greater.";
+        hint.classList.add('warn');
+        return;
+      }
+
+      let total = 0;
+      for (let i = 2; i <= limitVal; i += 2){
+        total++;
+        const span = document.createElement('span');
+        span.className = 'bubble' + (total % 10 === 0 ? ' flair' : '');
+        span.textContent = i;
+        box.appendChild(span);
+      }
+
+      count.textContent = `You found ${total} even number${total===1?'':'s'}!`;
+      count.style.display = "block";
+      hint.textContent = "Great! Change the number and try again.";
+      hint.classList.remove('warn');
+    }
+
+    function clearEvens(){
+      document.getElementById('evenGrid').innerHTML = "";
+      const count = document.getElementById('evenCount');
+      count.style.display = "none";
+      const hint = document.getElementById('loopHint');
+      hint.textContent = "Tip: Try 10, 20, or 30.";
+      hint.classList.remove('warn');
+    }
+  </script>
+</section>

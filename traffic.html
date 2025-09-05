@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Traffic Light – Conditionals (HTML + CSS only)</title>
+  <style>
+    :root{
+      --brand:#0cc0df;
+      --bg:#f7fbff;
+      --text:#222;
+    }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+      padding:24px;
+    }
+    .card{
+      width: 360px;
+      background:#fff;
+      border:1px solid #e6ecf1;
+      border-radius:16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.04);
+      padding:24px 24px 16px;
+    }
+    h1{
+      margin:0 0 8px;
+      color: var(--brand);
+      font-size: 22px;
+      text-align:center;
+    }
+    p.lead{
+      margin:0 0 16px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* layout */
+    .traffic{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:8px;
+    }
+    .box{
+      background:#111;
+      border-radius:16px;
+      padding:18px 14px;
+      width: 180px;
+      margin:0 auto;
+      border:3px solid #222;
+    }
+    .lights{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      width: 120px;
+      margin:0 auto;
+    }
+    .light{
+      width: 72px;
+      height: 72px;
+      border-radius:50%;
+      margin:0 auto;
+      background:#333;
+      border:3px solid #000;
+      box-shadow: inset 0 0 12px rgba(0,0,0,.5);
+      transition: filter .2s ease, opacity .2s ease;
+      opacity:.5;
+      filter: grayscale(1);
+    }
+
+    /* controls */
+    .controls{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:10px;
+      flex-wrap:wrap;
+    }
+    input[type="radio"]{
+      position:absolute;
+      left:-9999px;
+    }
+    .btn{
+      border:1px solid var(--brand);
+      padding:8px 12px;
+      border-radius:10px;
+      cursor:pointer;
+      user-select:none;
+      font-size:14px;
+    }
+    .btn:hover{ background:#eef9fc; }
+
+    /* default colors muted */
+    .light.red{ background:#8b0000; }
+    .light.yellow{ background:#a38b00; }
+    .light.green{ background:#0a6b0a; }
+
+    /* activate chosen light */
+    #red:checked ~ .traffic .box .lights .red,
+    #yellow:checked ~ .traffic .box .lights .yellow,
+    #green:checked ~ .traffic .box .lights .green{
+      opacity:1;
+      filter: none;
+    }
+    #red:checked ~ .traffic .box .lights .red{ background:#ff2a2a; }
+    #yellow:checked ~ .traffic .box .lights .yellow{ background:#ffd633; }
+    #green:checked ~ .traffic .box .lights .green{ background:#2ecc40; }
+
+    /* messages */
+    .panel{
+      margin-top:12px;
+      padding:12px;
+      border:1px solid #e6ecf1;
+      border-radius:12px;
+      background:#fafcff;
+      min-height:48px;
+      display:grid;
+      place-items:center;
+      font-weight:600;
+    }
+    .msg{ display:none; }
+    #red:checked ~ .traffic .panel .msg.stop{ display:block; color:#ff2a2a; }
+    #yellow:checked ~ .traffic .panel .msg.ready{ display:block; color:#ffb700; }
+    #green:checked ~ .traffic .panel .msg.go{ display:block; color:#1a9f2e; }
+    .panel .msg.hint{ display:block; font-weight:500; color:#6b7b86; }
+    #red:checked ~ .traffic .panel .hint,
+    #yellow:checked ~ .traffic .panel .hint,
+    #green:checked ~ .traffic .panel .hint{ display:none; }
+
+    footer{
+      margin-top: 10px;
+      text-align:center;
+      font-size:12px;
+      color:#64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Conditionals: Traffic Light</h1>
+    <p class="lead">Choose a light. The interface changes based on your selection — like an <em>if / else</em> conditional.</p>
+
+    <!-- radios first so CSS sibling selectors can react -->
+    <input type="radio" id="red" name="light">
+    <input type="radio" id="yellow" name="light">
+    <input type="radio" id="green" name="light">
+
+    <div class="traffic">
+      <div class="box">
+        <div class="lights">
+          <div class="light red"></div>
+          <div class="light yellow"></div>
+          <div class="light green"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label class="btn" for="red">Red</label>
+        <label class="btn" for="yellow">Yellow</label>
+        <label class="btn" for="green">Green</label>
+      </div>
+
+      <div class="panel" aria-live="polite">
+        <div class="msg hint">Select a light to see the result</div>
+        <div class="msg stop">Stop 🚫</div>
+        <div class="msg ready">Get Ready ⏳</div>
+        <div class="msg go">Go ✅</div>
+      </div>
+    </div>
+
+    <footer>HTML + CSS only demo (no JavaScript)</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<section>
+  <h2>Variables</h2>
+  <p>A variable is a named storage which stores a value during programming. 
+     The value stored in a variable can be changed or modified if needed.</p>
+  <p>Choose a color to change the color of the box:</p>
+
+  <!-- Choices -->
+  <label>
+    <input type="radio" name="color" onclick="document.getElementById('colorBox').style.background='red'"> Red
+  </label>
+  <label>
+    <input type="radio" name="color" onclick="document.getElementById('colorBox').style.background='blue'"> Blue
+  </label>
+  <label>
+    <input type="radio" name="color" onclick="document.getElementById('colorBox').style.background='green'"> Green
+  </label>
+
+  <!-- Output panel -->
+  <div id="colorBox" 
+       style="margin-top:10px; width:120px; height:120px; border:2px solid #333; 
+              display:flex; align-items:center; justify-content:center; 
+              background:lightgray; color:#333; font-weight:bold;">
+    Gray box
+  </div>
+</section>
